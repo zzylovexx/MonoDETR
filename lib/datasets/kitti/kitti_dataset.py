@@ -192,7 +192,9 @@ class KITTI_Dataset(data.Dataset):
         # labels encoding
         calibs = np.zeros((self.max_objs, 3, 4), dtype=np.float32)
         indices = np.zeros((self.max_objs), dtype=np.int64)
-        mask_2d = np.zeros((self.max_objs), dtype=np.bool)
+        # mask_2d = np.zeros((self.max_objs), dtype=np.bool)
+        mask_2d = np.zeros((self.max_objs), dtype=bool)
+
         labels = np.zeros((self.max_objs), dtype=np.int8)
         depth = np.zeros((self.max_objs, 1), dtype=np.float32)
         heading_bin = np.zeros((self.max_objs, 1), dtype=np.int64)
